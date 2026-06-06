@@ -23,23 +23,33 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="section" id="process" style={{ background: "rgba(255,255,255,0.45)" }}>
+    <section className="section surface-band" id="process">
       <div className="container">
-        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <span className="eyebrow">How it works</span>
-          <h2 className="section-title" style={{ maxWidth: "12ch", margin: "1rem auto 0" }}>
-            Simple, clear B2B procurement flow.
-          </h2>
-        </div>
+        <div className="process-layout">
+          <div className="section-head narrow reveal">
+            <span className="eyebrow">How it works</span>
+            <h2>Simple, clear B2B procurement flow.</h2>
+            <p>
+              A professional sourcing relationship depends on clarity, consistency,
+              and predictable operational communication.
+            </p>
+          </div>
 
-        <div className="process-grid">
-          {steps.map((step) => (
-            <div key={step.number} className="process-step">
-              <div className="process-number">{step.number}</div>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-            </div>
-          ))}
+          <div className="process-list">
+            {steps.map((step, index) => (
+              <article
+                key={step.number}
+                className="process-card reveal"
+                style={{ ["--reveal-delay" as any]: `${index * 90}ms` }}
+              >
+                <div className="step">{step.number}</div>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

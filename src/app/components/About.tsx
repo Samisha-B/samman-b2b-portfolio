@@ -2,28 +2,31 @@ export default function About() {
   return (
     <section className="section" id="about">
       <div className="container">
-        <div className="section-split">
-          <div className="section-left">
+        <div className="split-grid reveal">
+          <div>
             <span className="eyebrow">Who we are</span>
-            <h2 className="section-title">
+            <h2>
               A trusted B2B produce business built on dependability.
             </h2>
           </div>
-          <div className="section-right">
-            <p className="body-lead">
+
+          <div>
+            <p>
               Samman Enterprises is a dedicated B2B supplier of fresh fruits and
               vegetables, serving malls, retail chains, wholesalers, and
               institutional buyers who need consistent sourcing and professional
               supply relationships.
             </p>
-            <p className="body-text" style={{ marginTop: "1rem" }}>
+
+            <p style={{ marginTop: "1rem" }}>
               We work directly with business procurement teams and buying managers
               to ensure predictable availability, category breadth, and the kind
               of communication that keeps commercial supply chains running smoothly.
               Our vision extends beyond domestic supply, and we are actively
               building the foundations to serve overseas business buyers.
             </p>
-            <div className="about-chips">
+
+            <div className="panel-tags" style={{ marginTop: "1.5rem" }}>
               {[
                 "Mall supply programs",
                 "Retail chains",
@@ -31,23 +34,31 @@ export default function About() {
                 "Institutional procurement",
                 "Export partnerships",
               ].map((tag) => (
-                <span key={tag} className="about-chip">{tag}</span>
+                <span key={tag}>{tag}</span>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="about-cards">
+        <div className="intro-band reveal" style={{ marginTop: "2rem", ["--reveal-delay" as any]: "80ms" }}>
           {[
-            { emoji: "🏬", title: "Mall & retail supply", body: "We serve organized retail buyers who need fruits and vegetables supplied reliably across store locations and procurement calendars." },
-            { emoji: "📦", title: "Bulk order capability", body: "From mixed category orders to high-volume single-category supply, we handle bulk procurement with professional coordination." },
-            { emoji: "🌍", title: "Overseas expansion", body: "Samman Enterprises is building toward trade partnerships with international buyers, importers, and distributors." },
-          ].map((card) => (
-            <div key={card.title} className="about-card">
-              <div className="about-card-icon">{card.emoji}</div>
-              <h3>{card.title}</h3>
-              <p>{card.body}</p>
-            </div>
+            {
+              value: "Retail-ready",
+              label: "Structured supply support for malls and organized chains",
+            },
+            {
+              value: "Bulk capable",
+              label: "Mixed and high-volume category coordination for business buyers",
+            },
+            {
+              value: "Export vision",
+              label: "Building long-term overseas trade readiness and partnerships",
+            },
+          ].map((item) => (
+            <article key={item.value} className="metric-card">
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </article>
           ))}
         </div>
       </div>

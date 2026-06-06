@@ -8,7 +8,11 @@ type RevealProps = {
   delay?: number;
 };
 
-export default function Reveal({ children, className = '', delay = 0 }: RevealProps) {
+export default function Reveal({
+  children,
+  className = '',
+  delay = 0,
+}: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -16,8 +20,11 @@ export default function Reveal({ children, className = '', delay = 0 }: RevealPr
     const node = ref.current;
     if (!node) return;
 
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) {
+    const reducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    );
+
+    if (reducedMotion.matches) {
       setVisible(true);
       return;
     }
@@ -35,11 +42,17 @@ export default function Reveal({ children, className = '', delay = 0 }: RevealPr
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px',
+      }
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
