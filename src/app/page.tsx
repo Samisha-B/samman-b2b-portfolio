@@ -1,144 +1,155 @@
-import Navbar from "./components/Navbar";
-import Reveal from "./components/Reveal";
+import Navbar from './components/Navbar';
+import Reveal from './components/Reveal';
+import HeroVisual from './components/HeroVisual';
 
-const fruits = ["Apples", "Bananas", "Mangoes", "Grapes", "Oranges", "Pomegranates", "Papayas", "Guavas", "Watermelon", "Pineapple", "Strawberries", "Pears"];
-const veggies = ["Potatoes", "Onions", "Tomatoes", "Spinach", "Carrots", "Cauliflower", "Capsicum", "Broccoli", "Beans", "Peas", "Cabbage", "Bitter Gourd"];
-const seasonal = ["Litchi", "Custard Apple", "Jamun", "Raw Mango", "Sweet Corn", "Ridge Gourd", "Drumstick", "Taro Root", "Amla", "Star Fruit", "Dragon Fruit", "Jackfruit"];
+const categories = [
+  {
+    title: 'Fresh vegetables',
+    text: 'Tomato, onion, chilli, okra, capsicum, potato, and region-specific seasonal lines packed for wholesale movement.',
+    meta: 'Packed for mandi, retail chain, and distribution partners',
+  },
+  {
+    title: 'Fruit programs',
+    text: 'Banana, citrus, pomegranate, grapes, and mixed seasonal fruit aligned to quality windows and dispatch planning.',
+    meta: 'Short-lead procurement with consistent grading',
+  },
+  {
+    title: 'Bulk sourcing',
+    text: 'Structured sourcing for hotels, processors, institutional kitchens, modern retail, and export-aligned buyers.',
+    meta: 'Volume-ready coordination with supply visibility',
+  },
+];
+
+const process = [
+  ['Requirement mapping', 'We define volume, cadence, pack format, destination, and quality expectations before dispatch planning begins.'],
+  ['Source coordination', 'Supply is aligned with growers and partner markets using seasonality, lot availability, and movement windows.'],
+  ['Grading and packing', 'Orders are screened, sorted, packed, and tagged for cleaner receiving and more reliable downstream handling.'],
+  ['Dispatch and updates', 'Buyers receive clear movement communication for procurement teams, depots, and receiving managers.'],
+];
+
+const highlights = [
+  { value: '8+', label: 'high-demand produce lines' },
+  { value: '24–48h', label: 'dispatch rhythm for local cycles' },
+  { value: 'B2B', label: 'built for procurement teams' },
+];
+
+const exportCards = [
+  {
+    eyebrow: 'Supply confidence',
+    title: 'Documentation-ready thinking',
+    text: 'The operating approach is structured around consistency, paperwork discipline, dispatch clarity, and professional buyer communication.',
+  },
+  {
+    eyebrow: 'Market fit',
+    title: 'Built for wholesalers and retail chains',
+    text: 'The interface and inquiry flow are designed for serious buying conversations, not consumer-style browsing.',
+  },
+  {
+    eyebrow: 'Seasonality',
+    title: 'Planned around live availability',
+    text: 'Programs can shift with season windows, destination needs, and packaging preferences without disrupting the visual or content hierarchy.',
+  },
+];
 
 export default function Page() {
   return (
     <>
       <Navbar />
-      <main>
-
-        {/* ── HERO ── */}
-        <section className="hero" id="home">
+      <main id="main-content">
+        <section className="hero section">
           <div className="container hero-grid">
-
-            <Reveal>
-              <div>
-                <div className="hero-badge">
-                  <span className="eyebrow">B2B Produce Supplier</span>
-                </div>
-                <h1 className="hero-title">
-                  Fresh produce for <span className="green">modern business buyers.</span>
-                </h1>
-                <p className="hero-body">
-                  Samman Enterprises supplies fruits and vegetables to malls, retail chains,
-                  wholesale buyers, and institutional buyers across India — with a clear roadmap
-                  for overseas export partnerships.
-                </p>
-                <div className="hero-actions">
-                  <a href="#contact" className="btn btn-green">Request a Business Quote</a>
-                  <a href="#products" className="btn btn-ghost">View Produce Range</a>
-                </div>
-                <div className="hero-chips">
-                  <span className="hero-chip">Mall Supply</span>
-                  <span className="hero-chip">Retail Chains</span>
-                  <span className="hero-chip">Wholesale Buyers</span>
-                  <span className="hero-chip">Export Ready</span>
-                </div>
+            <Reveal className="hero-copy">
+              <span className="eyebrow">Premium produce sourcing from India</span>
+              <h1>
+                Fresh fruits and vegetables for <span>serious B2B buyers</span>.
+              </h1>
+              <p className="hero-text">
+                Samman helps wholesalers, retail chains, and procurement teams source dependable fresh produce with cleaner coordination, polished communication, and business-ready supply presentation.
+              </p>
+              <div className="cta-row">
+                <a className="btn btn-primary" href="#contact">Start an inquiry</a>
+                <a className="btn btn-secondary" href="#range">View produce range</a>
               </div>
+              <ul className="hero-points" role="list">
+                <li>Structured for wholesale and recurring supply</li>
+                <li>Clear grading, packing, and dispatch flow</li>
+                <li>Calm premium experience for procurement teams</li>
+              </ul>
             </Reveal>
-
-            <Reveal delay="d1">
-              <div className="hero-panel">
-                <div className="panel-quote">
-                  "We supply the full range of fruits and vegetables for business buyers
-                  who need dependable, bulk-ready produce sourcing."
-                </div>
-
-                <div className="panel-produce">
-                  <div className="blob blob-red"/>
-                  <div className="blob blob-orange"/>
-                  <div className="blob blob-green"/>
-                  <div className="blob blob-yellow"/>
-                  <div className="blob blob-lime"/>
-                  <div className="blob leaf-a"/>
-                  <div className="blob leaf-b"/>
-                  <div className="blob leaf-c"/>
-                  <div className="basket"/>
-                </div>
-
-                <div className="panel-float-cards">
-                  <div className="pfc">
-                    <div className="pfc-dot"/>
-                    <h4>Fresh Fruits</h4>
-                    <p>12+ varieties sourced for business demand</p>
-                  </div>
-                  <div className="pfc">
-                    <div className="pfc-dot"/>
-                    <h4>Vegetables</h4>
-                    <p>Daily staples and seasonal categories</p>
-                  </div>
-                  <div className="pfc">
-                    <div className="pfc-dot"/>
-                    <h4>Bulk Orders</h4>
-                    <p>Repeat supply for retail and wholesale</p>
-                  </div>
-                  <div className="pfc">
-                    <div className="pfc-dot"/>
-                    <h4>Export Vision</h4>
-                    <p>Actively building overseas supply capacity</p>
-                  </div>
-                </div>
-
-                <div className="panel-footer">
-                  <h4>Owner-led supply relationships</h4>
-                  <p>Business buyers get direct, professional communication — not a middleman layer.</p>
-                </div>
-              </div>
+            <Reveal className="hero-art" delay={0.1}>
+              <HeroVisual />
             </Reveal>
-
           </div>
         </section>
 
-        {/* ── ABOUT ── */}
+        <section className="section surface-band">
+          <div className="container intro-band">
+            {highlights.map((item, idx) => (
+              <Reveal className="metric-card" key={item.label} delay={idx * 0.08}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
         <section className="section" id="about">
+          <div className="container split-grid">
+            <Reveal>
+              <span className="eyebrow">Supply positioning</span>
+              <h2>Procurement-focused sourcing, presented with clarity.</h2>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p>
+                This is not a consumer produce storefront. The page is built for wholesale conversations: buyers who care about dependable sourcing, shipment timing, category visibility, and a supplier presence that feels trustworthy from the first screen.
+              </p>
+              <p>
+                Every section is aligned to a professional B2B flow, from hero messaging and category framing to the final inquiry form and contact details.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="section" id="range">
           <div className="container">
-            <div className="about-split">
-              <Reveal>
-                <div>
-                  <span className="eyebrow">About us</span>
-                  <h2 className="display" style={{ fontSize: "clamp(2.4rem, 4vw, 4rem)", marginTop: "1rem", maxWidth: "9ch" }}>
-                    Built for business supply.
-                  </h2>
-                  <div className="about-tags" style={{ marginTop: "1.6rem" }}>
-                    {["Mall procurement", "Retail chains", "Wholesale buyers", "Institutional supply", "Export partnerships"].map(t => (
-                      <span key={t} className="about-tag">{t}</span>
-                    ))}
+            <Reveal className="section-head">
+              <span className="eyebrow">Produce range</span>
+              <h2>Fresh categories arranged for business buyers.</h2>
+              <p>
+                The range is framed like a professional sourcing portfolio rather than a generic feature grid, with cleaner spacing, stronger alignment, and more useful labels.
+              </p>
+            </Reveal>
+
+            <div className="category-grid">
+              {categories.map((item, idx) => (
+                <Reveal className="category-card" key={item.title} delay={idx * 0.08}>
+                  <div className="category-icon" aria-hidden="true">
+                    {idx === 0 && (
+                      <svg viewBox="0 0 80 80" role="img">
+                        <rect x="12" y="42" width="56" height="20" rx="10" />
+                        <path d="M26 42c0-9 6-16 14-16s14 7 14 16" />
+                        <path d="M40 26c0-8 6-12 13-12" />
+                      </svg>
+                    )}
+                    {idx === 1 && (
+                      <svg viewBox="0 0 80 80" role="img">
+                        <circle cx="29" cy="42" r="13" />
+                        <circle cx="49" cy="37" r="15" />
+                        <path d="M49 20c3-5 8-7 13-7" />
+                      </svg>
+                    )}
+                    {idx === 2 && (
+                      <svg viewBox="0 0 80 80" role="img">
+                        <path d="M18 53c0-10 10-18 22-18s22 8 22 18v7H18z" />
+                        <path d="M29 34c1-8 7-13 15-13" />
+                        <path d="M49 36c7-2 12 1 14 7" />
+                      </svg>
+                    )}
                   </div>
-                </div>
-              </Reveal>
-
-              <Reveal delay="d1">
-                <div>
-                  <p className="lead">
-                    Samman Enterprises is a dedicated B2B fruits and vegetables supplier
-                    working with commercial procurement teams across India.
-                  </p>
-                  <p className="note" style={{ marginTop: "1rem" }}>
-                    We focus on three things: a broad and dependable produce range, professional
-                    supply communication, and consistent availability that lets buyers plan with
-                    confidence. Our long-term goal is to expand supply relationships to international
-                    buyers and trade partners, leveraging India&apos;s position as one of the world&apos;s
-                    largest fruit and vegetable producers.
-                  </p>
-                </div>
-              </Reveal>
-            </div>
-
-            <div className="about-cards">
-              {[
-                { icon: "🏬", title: "Mall & retail supply", body: "Built for organized modern trade buyers who need consistent sourcing across multiple store locations and purchasing cycles." },
-                { icon: "📦", title: "Bulk order coordination", body: "From single-category volume orders to mixed produce loads, we handle bulk supply with professional coordination and clear timelines." },
-                { icon: "🌍", title: "Overseas expansion", body: "We are actively preparing to serve international importers, distributors, and retail partners through direct export supply programs." },
-              ].map((c, i) => (
-                <Reveal key={c.title} delay={i === 0 ? "" : i === 1 ? "d1" : "d2"}>
-                  <div className="card about-card">
-                    <div className="about-card-icon">{c.icon}</div>
-                    <h3>{c.title}</h3>
-                    <p>{c.body}</p>
+                  <div className="category-copy">
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                    <span>{item.meta}</span>
                   </div>
                 </Reveal>
               ))}
@@ -146,81 +157,22 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── PRODUCTS ── */}
-        <section className="section products-bg" id="products">
-          <div className="container">
-            <Reveal>
-              <div style={{ maxWidth: "680px" }}>
-                <span className="eyebrow">Produce range</span>
-                <h2 className="display" style={{ fontSize: "clamp(2.4rem, 4vw, 4rem)", marginTop: "1rem" }}>
-                  All fruits and vegetables, one partner.
-                </h2>
-                <p className="note" style={{ marginTop: "1rem" }}>
-                  A broad category offering means buyers can consolidate procurement
-                  rather than managing multiple vendors. We supply across all major
-                  fruit and vegetable categories with seasonal additions throughout the year.
-                </p>
-              </div>
+        <section className="section process-section" id="process">
+          <div className="container process-layout">
+            <Reveal className="section-head narrow">
+              <span className="eyebrow">How it works</span>
+              <h2>Simple process, better delivery discipline.</h2>
+              <p>
+                The process section is kept functional and calm, with tighter card rhythm and clearer sequencing so the site feels operationally credible.
+              </p>
             </Reveal>
-
-            <div className="products-grid">
-              {[
-                { emoji: "🍎", label: "Fresh Fruits", items: fruits },
-                { emoji: "🥦", label: "Vegetables", items: veggies },
-                { emoji: "🌿", label: "Seasonal & Specialty", items: seasonal },
-              ].map((cat, i) => (
-                <Reveal key={cat.label} delay={i === 0 ? "" : i === 1 ? "d1" : "d2"}>
-                  <div className="card product-cat">
-                    <div className="product-cat-head">
-                      <span>{cat.emoji}</span>
-                      <h3>{cat.label}</h3>
-                    </div>
-                    <ul className="product-list">
-                      {cat.items.map(item => <li key={item}>{item}</li>)}
-                    </ul>
-                    <p className="products-note">+ bulk & mixed orders available</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <Reveal>
-              <div className="products-cta">
-                <p>Need a full category breakdown or custom supply quote?</p>
-                <a href="#contact" className="btn btn-green">Request full produce catalogue</a>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* ── PROCESS ── */}
-        <section className="section" id="process">
-          <div className="container">
-            <Reveal>
-              <div style={{ textAlign: "center", maxWidth: "560px", marginInline: "auto" }}>
-                <span className="eyebrow">How it works</span>
-                <h2 className="display" style={{ fontSize: "clamp(2.4rem, 4vw, 4rem)", marginTop: "1rem" }}>
-                  Simple, dependable, B2B-first.
-                </h2>
-                <p className="note" style={{ marginTop: "0.9rem", maxWidth: "100%" }}>
-                  Our process is built for procurement decision-makers who care about
-                  reliability, communication, and long-term supply relationships.
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="process-grid">
-              {[
-                { n: "01", title: "Buyer inquiry", body: "Malls, retailers, or wholesale buyers share their required produce categories, expected volumes, and supply frequency." },
-                { n: "02", title: "Category match", body: "We align your requirements with our sourcing, confirm availability, and prepare a clear commercial proposal." },
-                { n: "03", title: "Supply execution", body: "Orders are fulfilled on agreed timelines with consistent quality checks and direct business communication throughout." },
-                { n: "04", title: "Long-term growth", body: "Relationships grow from domestic B2B supply into larger procurement programs and eventually overseas export partnerships." },
-              ].map((s, i) => (
-                <Reveal key={s.n} delay={i === 0 ? "" : i === 1 ? "d1" : i === 2 ? "d2" : "d3"}>
-                  <div className="card process-step">
-                    <div className="step-num">{s.n}</div>
-                    <h3>{s.title}</h3>
-                    <p>{s.body}</p>
+            <div className="process-list">
+              {process.map(([title, text], idx) => (
+                <Reveal className="process-card" key={title} delay={idx * 0.08}>
+                  <span className="step">0{idx + 1}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
                   </div>
                 </Reveal>
               ))}
@@ -228,141 +180,136 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ── EXPORT ── */}
-        <section className="section products-bg" id="export">
+        <section className="section" id="export">
           <div className="container export-grid">
-            <Reveal>
-              <div>
-                <span className="eyebrow">Export vision</span>
-                <h2 className="display" style={{ fontSize: "clamp(2.4rem, 4vw, 4rem)", marginTop: "1rem", maxWidth: "10ch" }}>
-                  India-sourced. World-ready.
-                </h2>
-                <p className="lead" style={{ marginTop: "1.1rem" }}>
-                  Samman Enterprises is building toward international trade. Our produce
-                  range, sourcing depth, and professional supply mindset are designed to
-                  scale beyond domestic buyers.
-                </p>
-
-                <div className="export-points">
-                  {[
-                    { icon: "🌏", title: "International buyers welcome", body: "We invite inquiries from importers, distributors, and overseas retail buyers looking for a dependable Indian produce partner." },
-                    { icon: "📋", title: "Export documentation in progress", body: "We are preparing packaging standards, quality documentation, and the commercial processes needed for cross-border supply." },
-                    { icon: "🤝", title: "Long-term trade partnerships", body: "We prioritize multi-year supply relationships over transactional orders — for domestic and overseas buyers alike." },
-                  ].map((pt) => (
-                    <div key={pt.title} className="export-pt">
-                      <div className="export-pt-icon">{pt.icon}</div>
-                      <div>
-                        <h4>{pt.title}</h4>
-                        <p>{pt.body}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{ marginTop: "1.8rem" }}>
-                  <a href="#contact" className="btn btn-green">Start an export conversation</a>
-                </div>
+            <Reveal className="export-panel primary-panel">
+              <span className="eyebrow">Export vision</span>
+              <h2>A sourcing brand that can scale into broader trade conversations.</h2>
+              <p>
+                The visual language is intentionally premium and restrained so the brand can speak to domestic wholesale buyers today and export-oriented relationships tomorrow.
+              </p>
+              <div className="panel-tags" role="list">
+                <span>Sourced in India</span>
+                <span>Retail chains</span>
+                <span>Bulk orders</span>
+                <span>Seasonal produce</span>
               </div>
             </Reveal>
 
-            <Reveal delay="d1">
-              <div className="export-panel">
-                <div className="export-panel-inner">
-                  <span style={{ fontSize: "2.2rem" }}>🌿</span>
-                  <h3>Sourced in India.<br/>Supplied for the world.</h3>
-                  <p>
-                    India is one of the largest producers of fruits and vegetables globally.
-                    Samman Enterprises positions itself at the intersection of this production
-                    strength and the growing global demand for reliable, professionally supplied produce.
-                  </p>
-                  <div className="export-chips">
-                    <span className="export-chip">🇮🇳 India HQ</span>
-                    <span className="export-chip">🌍 Export ready</span>
-                    <span className="export-chip">🤝 Partners welcome</span>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
+            <div className="export-stack">
+              {exportCards.map((card, idx) => (
+                <Reveal className="export-panel" key={card.title} delay={idx * 0.08}>
+                  <span className="panel-eyebrow">{card.eyebrow}</span>
+                  <h3>{card.title}</h3>
+                  <p>{card.text}</p>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* ── CONTACT ── */}
-        <section className="section contact-bg" id="contact">
+        <section className="section contact-section" id="contact">
           <div className="container contact-grid">
-            <Reveal>
-              <div>
-                <span className="eyebrow">Get in touch</span>
-                <h2 className="display" style={{ fontSize: "clamp(2.4rem, 4vw, 4rem)", marginTop: "1rem", maxWidth: "9ch" }}>
-                  Start a supply conversation.
-                </h2>
-                <p className="note" style={{ marginTop: "1rem", maxWidth: "44ch" }}>
-                  Whether you are a mall procurement head, wholesale buyer, retail chain manager,
-                  or overseas importer — we want to hear from you.
-                </p>
-                <div className="contact-info-list">
-                  {[
-                    { icon: "✉️", label: "Business email", value: "business@sammanenterprises.com" },
-                    { icon: "📞", label: "Phone / WhatsApp", value: "+91-XXXXXXXXXX" },
-                    { icon: "📍", label: "Based in", value: "India — national & overseas supply" },
-                  ].map((item) => (
-                    <div key={item.label} className="cil-item">
-                      <span>{item.icon}</span>
-                      <div>
-                        <div className="cil-label">{item.label}</div>
-                        <div className="cil-value">{item.value}</div>
-                      </div>
-                    </div>
-                  ))}
+            <Reveal className="contact-copy">
+              <span className="eyebrow">Inquiry</span>
+              <h2>Start a wholesale conversation.</h2>
+              <p>
+                Use the inquiry form to share required categories, volumes, location, and buying cadence. The form is styled as a clean business touchpoint, not a generic landing page form.
+              </p>
+              <div className="contact-details">
+                <div>
+                  <span>Email</span>
+                  <a href="mailto:hello@sammanfresh.com">hello@sammanfresh.com</a>
+                </div>
+                <div>
+                  <span>Phone</span>
+                  <a href="tel:+919999999999">+91 99999 99999</a>
+                </div>
+                <div>
+                  <span>Location</span>
+                  <p>Nagpur, Maharashtra, India</p>
                 </div>
               </div>
             </Reveal>
 
-            <Reveal delay="d1">
-              <form className="contact-form">
-                <p className="cf-title">Send a business inquiry</p>
+            <Reveal className="form-card" delay={0.08}>
+              <form className="inquiry-form">
                 <div className="form-row">
-                  <div className="fg">
-                    <label htmlFor="name">Your name</label>
-                    <input id="name" type="text" placeholder="Full name" />
-                  </div>
-                  <div className="fg">
-                    <label htmlFor="company">Company</label>
-                    <input id="company" type="text" placeholder="Business name" />
-                  </div>
+                  <label>
+                    <span>Name</span>
+                    <input type="text" name="name" placeholder="Your name" />
+                  </label>
+                  <label>
+                    <span>Company</span>
+                    <input type="text" name="company" placeholder="Company name" />
+                  </label>
                 </div>
-                <div className="fg">
-                  <label htmlFor="email">Email</label>
-                  <input id="email" type="email" placeholder="you@company.com" />
+                <div className="form-row">
+                  <label>
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="you@company.com" />
+                  </label>
+                  <label>
+                    <span>Phone</span>
+                    <input type="tel" name="phone" placeholder="+91" />
+                  </label>
                 </div>
-                <div className="fg">
-                  <label htmlFor="buyer">Buyer type</label>
-                  <select id="buyer" defaultValue="">
-                    <option value="" disabled>Select buyer category</option>
-                    <option>Mall / retail chain</option>
-                    <option>Wholesale buyer</option>
-                    <option>Institutional buyer</option>
-                    <option>Overseas importer</option>
-                    <option>Other business buyer</option>
-                  </select>
+                <div className="form-row single">
+                  <label>
+                    <span>Required category</span>
+                    <select name="category" defaultValue="">
+                      <option value="" disabled>Select produce category</option>
+                      <option>Fresh vegetables</option>
+                      <option>Fruit programs</option>
+                      <option>Bulk sourcing</option>
+                      <option>Mixed requirement</option>
+                    </select>
+                  </label>
                 </div>
-                <div className="fg">
-                  <label htmlFor="msg">Produce requirements</label>
-                  <textarea id="msg" rows={4} placeholder="Categories, volumes, delivery frequency..." />
+                <div className="form-row single">
+                  <label>
+                    <span>Requirement details</span>
+                    <textarea name="message" rows={5} placeholder="Share quantities, destination, frequency, and preferred packaging."></textarea>
+                  </label>
                 </div>
-                <button type="button" className="btn btn-green" style={{ width: "100%" }}>
-                  Send Business Inquiry
-                </button>
+                <button className="btn btn-primary full" type="submit">Send inquiry</button>
               </form>
             </Reveal>
           </div>
         </section>
 
+        <section className="section cta-section">
+          <div className="container cta-panel">
+            <Reveal>
+              <span className="eyebrow">Business-ready presentation</span>
+              <h2>Premium enough to build trust, practical enough to convert inquiries.</h2>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="cta-row end">
+                <a className="btn btn-primary" href="#contact">Request supply details</a>
+                <a className="btn btn-secondary" href="#about">See positioning</a>
+              </div>
+            </Reveal>
+          </div>
+        </section>
       </main>
 
       <footer className="site-footer">
-        <div className="container footer-inner">
-          <span>© {new Date().getFullYear()} Samman Enterprises</span>
-          <span style={{ color: "var(--muted)" }}>B2B Fruits & Vegetables Supply · India</span>
+        <div className="container footer-row">
+          <div className="footer-brand">
+            <span className="brand-mark small" aria-hidden="true">
+              <svg viewBox="0 0 56 56">
+                <path d="M12 30c0-9 7-16 16-16 7 0 13 4 16 10 6 1 10 6 10 12 0 8-6 14-14 14H25c-8 0-13-6-13-13 0-3 0-5 0-7z" fill="currentColor" opacity="0.18"/>
+                <path d="M18 30c0-8 6-14 14-14 6 0 11 3 14 9 5 1 8 5 8 10 0 7-5 11-12 11H28c-6 0-10-4-10-10v-6z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M31 17c1-5 4-8 8-10" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Samman</strong>
+              <p>Fresh produce sourcing for wholesale and modern trade.</p>
+            </div>
+          </div>
+          <p className="footer-copy">Built for fruits and vegetables sourcing, wholesale coordination, and premium business presentation.</p>
         </div>
       </footer>
     </>
