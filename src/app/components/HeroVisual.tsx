@@ -1,87 +1,114 @@
 export default function HeroVisual() {
-  const produceItems = [
-    { emoji: "🥭", name: "Alphonso Mango", meta: "Maharashtra origin", badge: "Export Grade", type: "green" },
-    { emoji: "🍅", name: "Hybrid Tomato", meta: "Nashik sourced", badge: "Retail Ready", type: "gold" },
-    { emoji: "🫑", name: "Capsicum", meta: "Pune belt", badge: "Export Grade", type: "green" },
-    { emoji: "🧅", name: "Premium Onion", meta: "Lasalgaon grade", badge: "Bulk Ready", type: "gold" },
+  const produceCards = [
+    {
+      emoji: "🍅",
+      title: "Fresh Vegetables",
+      meta: "Tomato · Onion · Chilli",
+      badge: "In Season",
+    },
+    {
+      emoji: "🍊",
+      title: "Fruit Programs",
+      meta: "Banana · Citrus · Grapes",
+      badge: "Export Grade",
+    },
+    {
+      emoji: "🥬",
+      title: "Bulk Sourcing",
+      meta: "Hotels · Retail · Processors",
+      badge: "Volume Ready",
+    },
+    {
+      emoji: "🌿",
+      title: "Seasonal Lines",
+      meta: "Region-specific windows",
+      badge: "Live Stock",
+    },
   ];
 
-  const pipeline = [
-    { icon: "🌾", label: "Farm", active: true },
-    { icon: "✓", label: "Graded", active: true },
-    { icon: "📦", label: "Packed", active: true },
-    { icon: "🚚", label: "Dispatch", active: false },
-    { icon: "🏪", label: "Delivered", active: false },
+  const pipelineSteps = [
+    { label: "Farm", done: true },
+    { label: "Graded", done: true },
+    { label: "Packed", done: true },
+    { label: "Dispatch", done: false },
+    { label: "Delivered", done: false },
+  ];
+
+  const summaryPoints = [
+    "Farm Fresh Daily",
+    "Export Grade Quality",
+    "Bulk Supply Available",
   ];
 
   return (
-    <div className="hero-visual-wrap">
-      <div className="hero-visual">
-        <div className="hero-noise" aria-hidden="true" />
-        <div className="hero-glow" aria-hidden="true" />
+    <div className="hero-visual" aria-label="Produce sourcing operations dashboard">
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="hero-noise" aria-hidden="true" />
 
-        <div className="showcase-header">
-          <span className="showcase-label">Live Sourcing Dashboard</span>
-          <span className="showcase-dot" aria-hidden="true" />
-        </div>
-
-        <div className="produce-card-grid">
-          {produceItems.map((item) => (
-            <div className="produce-card" key={item.name}>
-              <span className="produce-card-emoji" aria-hidden="true">
-                {item.emoji}
-              </span>
-              <div className="produce-card-info">
-                <span className="produce-card-name">{item.name}</span>
-                <span className="produce-card-meta">{item.meta}</span>
-              </div>
-              <span className={`produce-card-badge badge-${item.type}`}>
-                {item.badge}
-              </span>
+      <div className="hv-produce-grid">
+        {produceCards.map((card) => (
+          <div key={card.title} className="hv-produce-card">
+            <span className="hv-produce-emoji" aria-hidden="true">
+              {card.emoji}
+            </span>
+            <div className="hv-produce-body">
+              <strong>{card.title}</strong>
+              <span>{card.meta}</span>
             </div>
-          ))}
-        </div>
-
-        <div className="sourcing-pipeline" role="list" aria-label="Sourcing pipeline">
-          {pipeline.map((step) => (
-            <div className="pipeline-step" key={step.label} role="listitem">
-              <div className={`pipeline-icon${step.active ? " active" : ""}`} aria-hidden="true">
-                {step.active ? (
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2.5 7l3 3 6-6"
-                      stroke="#fff"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                ) : (
-                  <span style={{ fontSize: "0.75rem" }}>{step.icon}</span>
-                )}
-              </div>
-              <span className="pipeline-label">{step.label}</span>
-            </div>
-          ))}
-        </div>
+            <span className="hv-produce-badge">{card.badge}</span>
+          </div>
+        ))}
       </div>
 
-      <div className="hero-mini-row">
-        <div className="glass-card">
-          <span className="glass-card-icon" aria-hidden="true">
-            🌿
-          </span>
-          <strong>Fresh Produce</strong>
-          <span>Daily movement · farm fresh</span>
-        </div>
+      <div className="hv-pipeline" role="list" aria-label="Supply pipeline">
+        {pipelineSteps.map((step, i) => (
+          <div
+            key={step.label}
+            className={`hv-pipeline-step ${step.done ? "done" : ""}`}
+            role="listitem"
+          >
+            {i < pipelineSteps.length - 1 && (
+              <div
+                className={`hv-step-line ${step.done ? "done" : ""}`}
+                aria-hidden="true"
+              />
+            )}
 
-        <div className="glass-card">
-          <span className="glass-card-icon" aria-hidden="true">
-            📋
-          </span>
-          <strong>Quality Assured</strong>
-          <span>Grade A · export standard</span>
-        </div>
+            <div className="hv-step-dot" aria-hidden="true">
+              {step.done ? (
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                  <path
+                    d="M2 5l2.2 2.2L8 3"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ) : null}
+            </div>
+
+            <span className="hv-step-label">{step.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="hv-summary-card" aria-label="Supply highlights">
+        {summaryPoints.map((point) => (
+          <div key={point} className="hv-summary-row">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.4" />
+              <path
+                d="M5 8l2 2 4-4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span>{point}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
