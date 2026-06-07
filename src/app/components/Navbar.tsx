@@ -13,21 +13,14 @@ const links = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
-    const initialTheme = media.matches ? 'dark' : 'light';
-
-    setTheme(initialTheme);
-    document.documentElement.setAttribute('data-theme', initialTheme);
-
-    const onScroll = () => setIsScrolled(window.scrollY > 12);
-    onScroll();
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+useEffect(() => {
+  const saved = localStorage.getItem('theme')
+  const initialTheme = saved === 'dark' || saved === 'light' ? saved : 'light'
+  setTheme(initialTheme)
+  document.documentElement.setAttribute('data-theme', initialTheme)
+}, [])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

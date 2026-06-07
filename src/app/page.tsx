@@ -105,7 +105,7 @@ export default function Page() {
 
                 <h1>
                   Fresh produce for{' '}
-                  <em>serious B2B buyers.</em>
+                  <em>B2B & B2C buyers.</em>
                 </h1>
 
                 <p className="hero-lead">
@@ -320,7 +320,7 @@ export default function Page() {
                 </div>
                 <div>
                   <span>Location</span>
-                  <p style={{ color: 'var(--color-text)' }}>Nagpur, Maharashtra, India</p>
+                  <p style={{ color: 'var(--color-text)' }}>Nanded, Maharashtra, India</p>
                 </div>
               </div>
             </Reveal>
@@ -416,12 +416,12 @@ export default function Page() {
             </span>
             <div>
               <strong>Samman Enterprises</strong>
-              <p className="footer-copy">Fresh produce sourcing for wholesale and modern trade, Nagpur · Maharashtra · India</p>
+              <p className="footer-copy">Fresh produce sourcing for wholesale and modern trade, Nanded · Maharashtra · India</p>
             </div>
           </div>
 
           <p className="footer-copy" style={{ color: 'var(--color-text-faint)', fontSize: 'var(--text-xs)' }}>
-            © 2025 Samman Enterprises. B2B produce sourcing.
+            © 2026 Samman Enterprises. B2B produce sourcing.
           </p>
         </div>
       </footer>
