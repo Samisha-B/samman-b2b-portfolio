@@ -217,7 +217,7 @@ export default function Page() {
                   key={title}
                   delay={idx * 0.08}
                 >
-                  <span className="step">0{idx + 1}</span>
+                  <span className="step">{String(idx + 1).padStart(2, "0")}</span>
                   <div>
                     <h3>{title}</h3>
                     <p>{text}</p>
@@ -296,66 +296,60 @@ export default function Page() {
 
             <Reveal className="form-card" delay={0.08}>
               <form className="inquiry-form">
-                <div className="form-row">
-                  <label>
-                    <span>Name</span>
-                    <input type="text" name="name" placeholder="Your name" />
-                  </label>
-
-                  <label>
-                    <span>Company</span>
-                    <input
-                      type="text"
-                      name="company"
-                      placeholder="Company name"
-                    />
-                  </label>
+                <div className="section-head" style={{ marginBottom: "0.5rem" }}>
+                  <span className="eyebrow">Business inquiry</span>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "2rem" }}>
+                    Send a sourcing request
+                  </h3>
                 </div>
 
                 <div className="form-row">
                   <label>
-                    <span>Email</span>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="you@company.com"
-                    />
+                    <span>Your name</span>
+                    <input type="text" placeholder="Full name" />
                   </label>
 
                   <label>
-                    <span>Phone</span>
-                    <input type="tel" name="phone" placeholder="+91" />
+                    <span>Company name</span>
+                    <input type="text" placeholder="Business name" />
                   </label>
                 </div>
 
                 <div className="form-row single">
                   <label>
-                    <span>Required category</span>
-                    <select name="category" defaultValue="">
+                    <span>Business email</span>
+                    <input type="email" placeholder="you@company.com" />
+                  </label>
+                </div>
+
+                <div className="form-row single">
+                  <label>
+                    <span>Buyer type</span>
+                    <select defaultValue="">
                       <option value="" disabled>
-                        Select produce category
+                        Select buyer category
                       </option>
-                      <option>Fresh vegetables</option>
-                      <option>Fruit programs</option>
-                      <option>Bulk sourcing</option>
-                      <option>Mixed requirement</option>
+                      <option>Mall / retail chain</option>
+                      <option>Wholesale buyer</option>
+                      <option>Institutional buyer</option>
+                      <option>Overseas importer / distributor</option>
+                      <option>Other business buyer</option>
                     </select>
                   </label>
                 </div>
 
                 <div className="form-row single">
                   <label>
-                    <span>Requirement details</span>
+                    <span>Produce requirements</span>
                     <textarea
-                      name="message"
                       rows={5}
-                      placeholder="Share quantities, destination, frequency, and preferred packaging."
+                      placeholder="Describe categories, volumes, delivery frequency, or sourcing needs..."
                     />
                   </label>
                 </div>
 
-                <button className="btn btn-primary full" type="submit">
-                  Send inquiry
+                <button type="submit" className="btn btn-primary full">
+                  Send business inquiry
                 </button>
               </form>
             </Reveal>
@@ -421,8 +415,7 @@ export default function Page() {
           </div>
 
           <p className="footer-copy">
-            Built for fruits and vegetables sourcing, wholesale coordination, and
-            premium business presentation.
+            Built for fruits and vegetables sourcing, wholesale coordination, and premium business presentation.
           </p>
         </div>
       </footer>

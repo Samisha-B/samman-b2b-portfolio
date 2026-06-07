@@ -24,8 +24,8 @@ export default function Navbar() {
 
     const onScroll = () => setIsScrolled(window.scrollY > 12);
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
 
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -35,9 +35,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const closeMenu = () => {
-      if (window.innerWidth > 820) {
-        setIsOpen(false);
-      }
+      if (window.innerWidth > 820) setIsOpen(false);
     };
 
     window.addEventListener('resize', closeMenu);
@@ -45,10 +43,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
-      <a className="skip-link" href="#main-content">
-        Skip to content
-      </a>
+    <header >
 
       <div className="container">
         <div className="nav-shell">
@@ -177,10 +172,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div
-          id="mobile-menu"
-          className={`mobile-panel ${isOpen ? 'open' : ''}`}
-        >
+        <div id="mobile-menu" className={`mobile-panel ${isOpen ? 'open' : ''}`}>
           {links.map((link) => (
             <a
               key={link.href}
@@ -191,11 +183,7 @@ export default function Navbar() {
             </a>
           ))}
 
-          <a
-            className="btn btn-primary"
-            href="#contact"
-            onClick={() => setIsOpen(false)}
-          >
+          <a className="btn btn-primary" href="#contact" onClick={() => setIsOpen(false)}>
             Start inquiry
           </a>
         </div>

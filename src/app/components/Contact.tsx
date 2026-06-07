@@ -30,7 +30,10 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="form-card reveal" style={{ ["--reveal-delay" as any]: "90ms" }}>
+          <div
+            className="form-card reveal"
+            style={{ ["--reveal-delay" as any]: "90ms" }}
+          >
             <form className="inquiry-form">
               <div className="section-head" style={{ marginBottom: "0.5rem" }}>
                 <span className="eyebrow">Business inquiry</span>
