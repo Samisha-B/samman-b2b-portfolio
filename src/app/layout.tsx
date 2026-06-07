@@ -19,9 +19,24 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Samman Enterprises — B2B Produce Sourcing',
+  title: "Samman Enterprises — B2B Produce Sourcing",
   description:
-    'Premium B2B supplier of fresh fruits and vegetables from Maharashtra, India. Serving wholesale buyers, retail chains, and export-oriented procurement teams.',
+    "B2B supplier of fresh fruits and vegetables for malls, retail chains, wholesalers, and export-focused business buyers. Based in Nagpur, India.",
+  metadataBase: new URL("https://sammanenterprises.com"),
+  openGraph: {
+    title: "Samman Enterprises — B2B Produce Sourcing",
+    description:
+      "Fresh produce for serious B2B buyers. Wholesale, retail chains, export.",
+    url: "https://sammanenterprises.com",
+    siteName: "Samman Enterprises",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Samman Enterprises",
+    description: "B2B produce sourcing from India.",
+  },
 };
 
 export default function RootLayout({
@@ -37,3 +52,4 @@ export default function RootLayout({
     </html>
   );
 }
+

@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Reveal from './components/Reveal';
 import HeroVisual from './components/HeroVisual';
+import InquiryForm from './components/InquiryForm';
 
 const categories = [
   {
@@ -32,9 +33,9 @@ const process = [
 ];
 
 const highlights = [
-  { value: "8+",    label: "high-demand produce lines consistently sourced" },
-  { value: "24–48h",label: "dispatch rhythm for local supply cycles" },
-  { value: "B2B",   label: "built exclusively for procurement teams" },
+  { value: "8+",    label: "high-demand produce lines" },
+  { value: "24–48h",label: "dispatch rhythm for local cycles" },
+  { value: "B2B",   label: "built for procurement teams" },
 ];
 
 const exportCards = [
@@ -51,7 +52,7 @@ const exportCards = [
   {
     eyebrow: "Seasonality",
     title:   "Planned around live availability",
-    text:    "Programs shift with season windows, destination needs, and packaging preferences without disrupting the supply hierarchy.",
+    text:    "Programs can shift with season windows, destination needs, and packaging preferences without disrupting the visual or content hierarchy.",
   },
 ];
 
@@ -299,85 +300,35 @@ export default function Page() {
         </section>
 
         {/* ── CONTACT ───────────────────────────────── */}
-        <section className="section" id="contact">
+        <section className="section contact-section" id="contact">
           <div className="container contact-grid">
             <Reveal className="contact-copy">
               <span className="eyebrow">Inquiry</span>
               <h2>Start a wholesale conversation.</h2>
               <p>
-                Share required categories, volumes, delivery location, and
-                buying cadence. We respond with a clear supply proposal.
+                Use the inquiry form to share required categories, volumes,
+                location, and buying cadence. The form is styled as a clean
+                business touchpoint, not a generic landing page form.
               </p>
 
               <div className="contact-details">
                 <div>
-                  <span>Business email</span>
+                  <span>Email</span>
                   <a href="mailto:hello@sammanfresh.com">hello@sammanfresh.com</a>
                 </div>
                 <div>
-                  <span>Phone / WhatsApp</span>
+                  <span>Phone</span>
                   <a href="tel:+919999999999">+91 99999 99999</a>
                 </div>
                 <div>
                   <span>Location</span>
-                  <p style={{ color: 'var(--color-text)' }}>Nanded, Maharashtra, India</p>
+                  <p>Nagpur, Maharashtra, India</p>
                 </div>
               </div>
             </Reveal>
 
-            <Reveal className="form-card" delay={0.1}>
-              <form className="inquiry-form">
-                <div className="form-row">
-                  <label>
-                    <span>Your name</span>
-                    <input type="text" name="name" placeholder="Full name" />
-                  </label>
-                  <label>
-                    <span>Company</span>
-                    <input type="text" name="company" placeholder="Business name" />
-                  </label>
-                </div>
-
-                <div className="form-row">
-                  <label>
-                    <span>Email</span>
-                    <input type="email" name="email" placeholder="you@company.com" />
-                  </label>
-                  <label>
-                    <span>Phone</span>
-                    <input type="tel" name="phone" placeholder="+91" />
-                  </label>
-                </div>
-
-                <div className="form-row single">
-                  <label>
-                    <span>Buyer type</span>
-                    <select name="type" defaultValue="">
-                      <option value="" disabled>Select buyer category</option>
-                      <option>Mall / retail chain</option>
-                      <option>Wholesale buyer</option>
-                      <option>Institutional buyer</option>
-                      <option>Overseas importer / distributor</option>
-                      <option>Other business buyer</option>
-                    </select>
-                  </label>
-                </div>
-
-                <div className="form-row single">
-                  <label>
-                    <span>Requirement details</span>
-                    <textarea
-                      name="message"
-                      rows={5}
-                      placeholder="Share quantities, destination, frequency, and preferred packaging."
-                    />
-                  </label>
-                </div>
-
-                <button className="btn btn-primary full" type="submit">
-                  Send business inquiry
-                </button>
-              </form>
+            <Reveal className="form-card" delay={0.08}>
+              <InquiryForm />
             </Reveal>
           </div>
         </section>
