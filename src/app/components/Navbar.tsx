@@ -12,6 +12,12 @@ const links = [
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 12);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
 const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
@@ -36,7 +42,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <header >
+    <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
 
       <div className="container">
         <div className="nav-shell">

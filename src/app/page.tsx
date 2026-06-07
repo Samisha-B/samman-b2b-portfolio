@@ -322,7 +322,7 @@ export default function Page() {
                 </div>
                 <div>
                   <span>Location</span>
-                  <p>Nagpur, Maharashtra, India</p>
+                  <p>Nanded, Maharashtra, India</p>
                 </div>
               </div>
             </Reveal>
